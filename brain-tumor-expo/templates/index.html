@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <title>Brain Tumor Detection & Classification</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+
+
+  <!-- Additional CSS Files -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/fontawesome.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/custom.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/templatemo-tale-seo-agency.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/owl.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/animate.css') }}">
+  <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+  <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet">
+  <!--
+
+-->
+</head>
+
+<body>
+
+  <!-- ***** Preloader Start ***** -->
+  <!-- <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div> -->
+  <!-- ***** Preloader End ***** -->
+
+  <!-- ***** Pre-Header Area Start ***** -->
+  <div class="pre-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-sm-9">
+          <div class="left-info">
+            <ul>
+              <li><a href="#"><i class="fa fa-globe"></i>uib.ac.id</a></li>
+              <li><a href="#"><i class="fa fa-map-marker"></i>Baloi-Sei Ladi, Jl. Gajah Mada, Tiban Indah, Kec.
+                  Sekupang, Kota Batam, Kepulauan Riau 29426</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Pre-Header Area End ***** -->
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <!-- ***** Logo Start ***** -->
+            <a href="index.html" class="logo">
+              <img src="{{ url_for('static', filename='assets/images/brain.png') }}" alt="" style="width: 70px;">
+            </a>
+            <!-- ***** Logo End ***** -->
+            <!-- ***** Menu Start ***** -->
+            <ul class="nav">
+              <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
+              <li class="scroll-to-section"><a href="#services">Brain Tumor</a></li>
+              <li class="scroll-to-section"><a href="#infos">Survey Data</a></li>
+              <li class="scroll-to-section"><a href="#contact">Check Your Brain</a></li>
+            </ul>
+            <a class='menu-trigger'>
+              <span>Menu</span>
+            </a>
+            <!-- ***** Menu End ***** -->
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+  <div class="main-banner" id="top">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-7">
+          <div class="caption header-text">
+            <h6>BRAIN TUMOR DETECTION & CLASSIFICATION</h6>
+            <div class="line-dec"></div>
+            <h4>Meet our AI : <em>Check your brain condition</em> with<br>
+              <span>Ease</span>
+            </h4>
+            <p>
+              Our AI was created to be an early diagnosis of brain tumors. You only need to explain your current health
+              condition and enter the results of an MRI scan of your brain. check your brain condition easily at your
+              fingertips
+            </p>
+            <div class="second-button"><a href="#contact">Check with AI</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-us section" id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="contact-us-content">
+            <div class="row">
+              <div class="col-lg-12">
+                <form id="contact-form" method="post" enctype="multipart/form-data">
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <div class="section-heading">
+                        <h2>Check <em>your brain</em> right <span>here</span></h2>
+                      </div>
+                    </div>
+                    <div class="col-lg-7">
+                      <fieldset>
+                        <textarea name="desc" id="desc" style="height: 430px;"
+                          placeholder="Describe what are you feeling with your health condition right now"
+                          required></textarea>
+                      </fieldset>
+                    </div>
+                    <div class="col-lg-5 mb-4">
+                      <fieldset>
+                        <!-- <div class="col-lg-6 col-md-6 col-sm-6" style="background-color: red;"> -->
+                        <div class="custom-img-upload__card mb-3 " id="imageOneDisplay">
+                          <input accept="image/*" type="file" class="imageOne" name="imageOne" id="imageOne" required>
+                          <!-- <div class="custom-img-upload__card-body d-flex flex-row justify-content-center align-items-center"> -->
+                          <label for="imageOne" class="text-center" id="signOne">
+                            Upload or drop your brain MRI scan right here
+                          </label>
+                          <!-- </div> -->
+                        </div>
+                        <!-- </div> -->
+                      </fieldset>
+                    </div>
+                    <div class="col-lg-12">
+                      <fieldset>
+                        <button type="submit" id="btn-predict" class="orange-button">Check my brain</button>
+                      </fieldset>
+                    </div>
+                  </div>
+                </form>
+                <div class="more-info d-none" id="result-container">
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <div class="container">
+                        <div class="row">
+                          <div class="col-lg-12">
+                            <div class="main-content">
+                              <div class="row">
+                                <div class="col-lg-12">
+                                  <div class="section-heading text-white">
+                                    <center>
+                                      <h2 class="text-white">Result</span></h2>
+                                    </center>
+                                    <h6 class="text-white">
+                                      Based on the data that you given, we have predicted as follows:
+                                    </h6>
+                                    <br>
+                                    <span class="text-white" id="resultImage">
+
+                                    </span>
+                                    <br>
+                                    <a href="" id="linkImage" target="_blank">
+                                      <strong>
+                                        <small>
+                                          <span class="text-white" id="readMoreImage">
+
+                                          </span>
+                                        </small>
+                                      </strong>
+                                    </a>
+                                    <br>
+                                    <br>
+                                    <h6 class="text-white">
+                                      On the other hand,
+                                    </h6>
+                                    <br>
+                                    <span class="text-white" id="resultText">
+
+                                    </span>
+                                    <br>
+                                    <a href="" id="linkText" target="_blank">
+                                      <strong>
+                                        <small>
+                                          <span class="text-white" id="readMoreText">
+
+                                          </span>
+                                        </small>
+                                      </strong>
+                                    </a>
+                                  </div>
+                                  <p class="text-white"><small>*Disclaimer : The data we have is not 100% accurate. Use
+                                      this AI tool for
+                                      initial diagnosis. For more accurate results, you are advised to carry out a
+                                      general health examination</small></p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="services section" id="services">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 offset-lg-6">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="section-heading">
+                <h2>3 common types of <em>Brain Tumor</em>
+                </h2>
+                <div class="line-dec"></div>
+                <p>There are many types of brain tumors, but these three are the most common</p>
+              </div>
+            </div>
+            <div class="col-lg-6 col-sm-6">
+              <center>
+                <div class="service-item">
+                  <div class="icon">
+                    <img src="{{ url_for('static', filename='assets/images/brain-icon.png') }}" alt="discover SEO"
+                      class="templatemo-feature">
+                  </div>
+                  <h4>Menignioma</h4>
+                </div>
+              </center>
+            </div>
+            <div class="col-lg-6 col-sm-6">
+              <center>
+                <div class="service-item">
+                  <div class="icon">
+                    <img src="{{ url_for('static', filename='assets/images/brain-icon.png') }}" alt="data analysis"
+                      class="templatemo-feature">
+                  </div>
+                  <h4>Glioma</h4>
+                </div>
+              </center>
+            </div>
+            <div class="col-lg-12 col-sm-12">
+              <center>
+                <div class="service-item">
+                  <div class="icon">
+                    <img src="{{ url_for('static', filename='assets/images/brain-icon.png') }}" alt="precise data"
+                      class="templatemo-feature">
+                  </div>
+                  <h4>Pituitay</h4>
+                </div>
+              </center>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="infos section" id="infos">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="main-content">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="section-heading">
+                  <h2>Did <em>you know</em> about <span>Brain Tumor enough?</span></h2>
+                  <div class="line-dec"></div>
+                  <p>According to data from the World Health Organization (WHO) in 2020, the global number of brain
+                    tumor cases reached 308,102, with a total of 251,329 fatalities. This information reflects the
+                    global impact of this health issue in that year, highlighting the incidence rate and mortality risk
+                    that requires serious attention from the medical community and health researchers.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="col-lg-12">
+        <p>Copyright © 2023 <a href="#">Universitas Internasional Batam</a>. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+  <!-- {{ url_for('static', filename='css/main.css') }} -->
+  <script src="{{ url_for('static', filename='vendor/jquery/jquery.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+
+  <script src="{{ url_for('static', filename='assets/js/isotope.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/js/owl-carousel.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/js/tabs.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/js/popup.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/js/custom.js') }}"></script>
+  <!-- <script src="{{ url_for('static', filename='/assets/js/upload.js') }}"></script> -->
+  <script src="{{ url_for('static', filename='assets/js/handler.js') }}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+</body>
+
+</html>
